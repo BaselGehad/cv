@@ -1,0 +1,206 @@
+/* General Rules */
+* {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main-color: #009688;
+  --sec-color: #757575;
+  --main-shadow: 0 0 1em rgba(0, 0, 0, 0.2), 0 0 1.2em rgba(0, 0, 0, 0.3);
+  --sec-shadow: 0 0 0.2em rgba(0, 0, 0, 0.253), 0 0 0.5em rgba(0, 0, 0, 0.247);
+}
+body {
+  font-family: "roboto", sans-serif;
+  background-color: #f1f1f1;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+hr {
+  border: 0;
+  border-bottom: 1px solid #eee;
+  margin: 1em;
+}
+i {
+  color: var(--main-color);
+}
+/* page */
+div.page {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em 0 0;
+}
+/* aside */
+div.page aside {
+  width: 30%;
+  background-color: white;
+  box-shadow: var(--main-shadow);
+  height: fit-content;
+}
+div.page aside div {
+  position: relative;
+}
+div.page aside div h2 {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+  font-size: 1.8em;
+  font-weight: 400;
+}
+div.page aside ul.info li{
+  margin: 0.5em 0;
+  padding: .5em;
+  color: var(--sec-color);
+}
+div.page aside ul.info li i{
+  padding-right: 1em;
+}
+div.page aside p {
+  margin: 1.5em 0;
+}
+div.page aside p b {
+  color: var(--sec-color);
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+div.page aside p b i{
+  padding-right: 1em;
+}
+div.page aside ul.skills li, ul.lang li {
+  margin: 1em;
+  color: var(--sec-color);
+}
+div.page aside ul.skills li div, ul.lang li div{
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 10px;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  position: relative;
+}
+div.page aside ul.lang li div{
+  height: 15px;
+}
+div.page aside ul.skills li div::before, ul.lang li div::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--main-color);
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  color: white;
+}
+div.page aside ul.skills li:nth-child(2) div::before {
+  width: 90%;
+}
+div.page aside ul.skills li:nth-child(4) div::before {
+  width: 80%;
+}
+div.page aside ul.skills li:nth-child(6) div::before {
+  width: 65%;
+}
+div.page aside ul.skills li:nth-child(8) div::before {
+  width: 55%;
+}
+div.page aside ul.lang li:nth-child(4) div::before {
+  width: 80%;
+}
+div.page aside ul.lang li:nth-child(6) div::before {
+  width: 33%;
+}
+/* main */
+div.page main {
+  width: calc(70% - 3em);
+}
+/* main section */
+main section:first-child, section:last-child {
+  background-color: white;
+  padding: 0.5em;
+  box-shadow: var(--sec-shadow);
+  margin-bottom: 1em;
+}
+main section h2 {
+  margin: 1em 0.5em;
+  color: var(--sec-color);
+  font-size: 1.8em;
+  font-weight: 400;
+}
+main section h2 i{
+  margin-right: 0.5em;
+  font-size: 1.2em;
+}
+main section div {
+  margin: 1em;
+}
+main section div h3 {
+  color: var(--sec-color);
+  margin: 1.5em 0;
+}
+main section div h4 {
+  font-weight: 400;
+  margin: 1em 0;
+  color: var(--main-color);
+}
+main section div h4 i{
+  margin-right: 1em;
+  
+}
+main section div p {
+  line-height: 1.5em;
+}
+/* Footer */
+footer {
+  background-color: var(--main-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer p {
+  margin: 0.5em;
+}
+footer ul {
+  display: flex;
+  margin: 0.5em;
+}
+footer ul li i{
+  color: white;
+  margin-right: 0.5em;
+}
+footer ul li i:hover {
+  color: #dfdfdf;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+footer p:nth-of-type(2) i {
+  color: blue;
+}
+/* media queries */
+@media screen and (max-width: 768px) {
+  div.page {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  div.page aside{
+    width: 90%;
+    margin-bottom: 1em;
+    box-shadow: var(--sec-shadow);
+  }
+  div.page main {
+    width: 90%;
+  }
+}
